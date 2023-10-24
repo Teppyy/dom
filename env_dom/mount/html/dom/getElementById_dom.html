@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>getElementById</h1>
+    <p>GET : href</p>
+    <a></a>
+    <script>
+    function getElementById_dom(query) {
+       getElementbyId().href = query;
+    }
+    var query = (new URLSearchParams(window.location.search)).get('param');
+    if(query) {
+       getElementById_dom(query);
+    }
+    </script>
+  </body>
+</html>

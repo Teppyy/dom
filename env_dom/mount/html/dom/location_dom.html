@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>location.href / location.replace</h1>
+    <p>GET : href , replace</p>
+    <script>
+    function href_dom(query) {
+       location.href = query;
+    }
+    function replace_dom(query) {
+       location.replace(query);
+    }
+
+    var href_query = (new URLSearchParams(window.location.search)).get('href');
+    var replace_query = (new URLSearchParams(window.location.search)).get('replace');
+
+    if(href_query) {
+       href_dom(href_query);
+    }
+    if(replace_query) {
+       replace_dom(replace_query);
+    }
+    </script>
+  </body>
+</html>

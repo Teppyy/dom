@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>eval等</h1>
+    <p>Execute javascript</p>
+    <p>GET : eval,setin,setout,func</p>
+    <script>
+    function eval_dom(query) {
+       var result = eval('console.log("'+query+'")');
+    }
+    function setinterval_dom(query) {
+       var result = setInterval('console.log("'+query+'")',5000);
+    }
+    function settimeout_dom(query) {
+       var result = setTimeout('console.log("'+query+'")',5000);
+    }
+    function func_dom(query) {
+       var result = Function('console.log("'+query+'")')();
+    }
+    var ev = (new URLSearchParams(window.location.search)).get('eval');
+    var setin = (new URLSearchParams(window.location.search)).get('setin');
+    var setout = (new URLSearchParams(window.location.search)).get('setout');
+    var fun = (new URLSearchParams(window.location.search)).get('func');
+
+    if(ev) {
+       eval_dom(ev);
+    }
+    if(setin) {
+       setinterval_dom(setin);
+    }
+    if(setout) {
+       settimeout_dom(setout);
+    }
+    if(fun) {
+       func_dom(fun);
+    }
+    </script>
+  </body>
+</html>

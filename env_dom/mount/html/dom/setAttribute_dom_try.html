@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>sample1</title>
+  <style>
+    div {
+      margin: 10px;
+      padding: 10px;
+      border: medium solid blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>setAttribute</h1>
+  <h2>GET val : val change</h2>
+  <h2>GET attr : attr change</h2>
+  <button onclick="attr_change()">attr change</button><br>
+  <div>
+    <div>
+      <a id="anchor" href="http://localhost:25565/dom/picture/NTT.png">link</a>
+    </div>
+    <div>
+      <p id="attr">hello</p><br>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var anchor = document.getElementById("anchor");
+    var p = document.getElementById("attr");
+
+    var val_query = (new URLSearchParams(window.location.search)).get('val');
+    var attr_query = (new URLSearchParams(window.location.search)).get('attr');
+
+    function attr_change() {
+      anchor.setAttribute(attr_query,val_query)
+      p.setAttribute(attr_query,val_query);
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>sample1</title>
+  <style>
+    div {
+      margin: 10px;
+      padding: 10px;
+      border: medium solid blue;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="addChildCreate()">Create Child</button><br>
+  <p>param：inner</p>
+  <div id="parent">parent
+    <div id="child1">child 1</div>
+    <div id="child2">child 2</div>
+    <div id="child3">child 3</div>
+  </div>
+  <script type="text/javascript">
+    var parent = document.getElementById("parent");
+    var inner = (new URLSearchParams(window.location.search)).get('inner');
+    //var inner = "<img src=0 onerror=alert()>";
+
+    function addChildCreate() {
+      var child = document.createElement("div");
+      child.innerHTML = inner;
+      parent.appendChild(child);
+    }
+  </script>
+</body>
+</html>

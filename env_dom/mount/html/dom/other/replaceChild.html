@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>sample1</title>
+  <style>
+    div {
+      margin: 10px;
+      padding: 10px;
+      border: medium solid blue;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="replace_func()">Replace Child</button><br>
+  <div id="parent">parent
+    <div id="child1">child 1</div>
+    <div id="child2">child 2</div>
+    <div id="child3">child 3</div>
+  </div>
+  <script type="text/javascript">
+    var parent = document.getElementById("parent");
+    var old_child = document.getElementById("child3");
+
+    function replace_func() {
+      var new_child = document.createElement("div");
+      new_child.innerText = "new child";
+      parent.replaceChild(new_child,old_child);
+    }
+  </script>
+</body>
+</html>

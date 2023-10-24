@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>inn|outerHTML</h1>
+    <p>GET : inner , outer</p>
+    <h2>inner</h2>
+    <p id=inner>inner</p>
+    <h2>outer</h2>
+    <p id=outer>outer</p>
+    <script>
+    function innerhtml_dom(query) {
+       text = document.getElementById("inner");
+       text.innerHTML = query;     
+    }
+    function outerhtml_dom(query) {
+       text = document.getElementById("outer");
+       text.outerHTML = query;     
+    }
+
+    var in_query = (new URLSearchParams(window.location.search)).get('inner');
+    var out_query = (new URLSearchParams(window.location.search)).get('outer');
+
+    if(in_query) {
+       innerhtml_dom(in_query);
+    }
+    if(out_query) {
+       outerhtml_dom(out_query);
+    }
+    </script>
+  </body>
+</html>

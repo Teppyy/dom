@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>sample1</title>
+  <style>
+    div {
+      margin: 10px;
+      padding: 10px;
+      border: medium solid blue;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="addChildCreate()">Create Child</button><br>
+  <div id="parent">parent
+    <div id="child1">child 1</div>
+    <div id="child2">child 2</div>
+    <div id="child3">child 3</div>
+  </div>
+  <script type="text/javascript">
+    var parent = document.getElementById("parent");
+    var idx = 4;
+
+    function addChildCreate() {
+      var child = document.createElement("div");
+      addChild(child);
+    }
+
+    function addChild(child) {
+      child.id = "child" + idx;
+      child.innerText = "child " + idx;
+      idx++;
+      child = parent.appendChild(child);
+      console.log(child);
+    }
+  </script>
+</body>
+</html>

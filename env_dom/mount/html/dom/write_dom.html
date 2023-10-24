@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <h1>write</h1>
+    <p>GET : param</p>
+    <script>
+    function write_dom(query) {
+       document.write(query);
+    }
+    var query = (new URLSearchParams(window.location.search)).get('param');
+    if(query) {
+       write_dom(query);
+    }
+    </script>
+  </body>
+</html>
